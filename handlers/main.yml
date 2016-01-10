@@ -1,0 +1,4 @@
+---
+# handlers file for sbaerlocher.redis
+- name: restart redis
+  service: name={{ redis_daemon }} state=restarted
