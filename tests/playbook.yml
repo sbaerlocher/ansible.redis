@@ -3,4 +3,4 @@
   remote_user: root
   sudo: yes
   roles:
-    - sbaerlocher.redis
+    - ansible.redis
