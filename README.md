@@ -1,4 +1,5 @@
 # Ansible Role: Redis
+[![Build Status](https://travis-ci.org/sbaerlocher/ansible.redis.svg?branch=master)](https://travis-ci.org/sbaerlocher/ansible.redis)
 
 ## Description
 
@@ -59,6 +60,7 @@ None
 ### 1.1
 
 * add travis
+* fix travis problems
 
 ## Author
 
