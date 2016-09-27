@@ -7,5 +7,5 @@
 - name: started redis
   service: name={{ redis_daemon }} state=started
 
-- name: enabld redis
+- name: enabled redis
   service: name={{ redis_daemon }} enabled=yes
