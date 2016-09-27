@@ -3,7 +3,7 @@ galaxy_info:
   author: Simon Baerlocher <sbaerlocher@sbaerlocher.ch>
   description: "Redis installer"
   license: license (MIT)
-  min_ansible_version: 1.8
+  min_ansible_version: 2
   platforms:
     - name: EL
       versions:

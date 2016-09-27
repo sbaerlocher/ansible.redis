@@ -1,17 +1,21 @@
 ---
-# Variable setup.
-- name: Include OS-specific variables.
-  include_vars: "{{ ansible_os_family }}.yml"
+# tasks file for sbaerlocher.redis
+- name: add OS specific variables
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "vars/{{ ansible_distribution }}-{{ ansible_distribution_version }}.yml"
+    - "vars/{{ ansible_distribution }}.yml"
+    - "vars/{{ ansible_os_family }}.yml"
+    - "vars/defaults.yml"
 
-# Setup/install tasks.
-- include: "{{ ansible_os_family }}.yml"
+- name: install the latest version of redis
+  package: name={{ redis_package }} state=latest
 
-- name: Redis configure
+- name: redis configure
   template:
     src: redis.conf.j2
     dest: "{{ redis_conf_path }}"
     mode: 0644
-  notify: restart redis
-
-- name: start and enable redis
-  service: "name={{ redis_daemon }} state=started enabled=yes"
+  notify: 
+    - restart redis
+    - enabled redis

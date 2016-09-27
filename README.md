@@ -53,14 +53,18 @@ None
 
 ## Changelog
 
-### 1.0
+### 1.2
 
-* Initial release
+* add package manager for generic OS
 
 ### 1.1
 
 * add travis
 * fix travis problems
+
+### 1.0
+
+* Initial release
 
 ## Author
 

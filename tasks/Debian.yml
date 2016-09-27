@@ -1,3 +1,0 @@
----
-- name: install redis
-  apt: name=redis-server state=installed
