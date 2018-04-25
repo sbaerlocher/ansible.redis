@@ -12,7 +12,8 @@
     - packages
 
 - name: install the latest version of redis
-  package: name={{ redis_package }} state=latest
+  package:
+    name: "{{ redis_package }}"
   tags:
     - packages
 
@@ -21,7 +22,7 @@
     src: redis.conf.j2
     dest: "{{ redis_conf_path }}"
     mode: 0644
-  notify: 
+  notify:
     - restart redis
     - enabled redis
   tags:
